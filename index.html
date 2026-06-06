@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Cheatsheets</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fff;
+      color: #1d1d1f;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+      font-size: 13px;
+      line-height: 1.5;
+      padding: 56px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+
+    .tab {
+      font-size: 13px;
+      font-weight: 500;
+      color: #c7c7cc;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      font-family: inherit;
+      transition: color 0.15s ease;
+    }
+
+    .tab:hover { color: #86868b; }
+    .tab.active { color: #1d1d1f; font-weight: 600; }
+
+    h1 {
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 48px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 72px;
+      row-gap: 48px;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #86868b;
+      margin-bottom: 18px;
+    }
+
+    .row {
+      display: flex;
+      align-items: baseline;
+      gap: 28px;
+      padding: 5px 0;
+    }
+
+    .cmd {
+      flex-shrink: 0;
+      width: 200px;
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, monospace;
+      font-size: 12px;
+      color: #1d1d1f;
+    }
+
+    .desc { color: #86868b; }
+
+    .links {
+      margin-top: 56px;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+
+    .links a {
+      color: #86868b;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .links a:hover { color: #0071e3; }
+
+    .page { display: none; }
+    .page.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <button class="tab active" id="tab-homebrew" onclick="show('homebrew')">Homebrew</button>
+    <button class="tab" id="tab-git" onclick="show('git')">Git</button>
+    <button class="tab" id="tab-vim" onclick="show('vim')">Vim</button>
+    <button class="tab" id="tab-ssh" onclick="show('ssh')">SSH</button>
+  </nav>
+
+  <!-- HOMEBREW -->
+  <div class="page active" id="homebrew">
+    <h1>Homebrew Cheatsheet</h1>
+    <div class="grid">
+      <div class="section">
+        <div class="section-title">Homebrew Itself</div>
+        <div class="row"><span class="cmd">brew --version</span><span class="desc">Installed version of Homebrew</span></div>
+        <div class="row"><span class="cmd">brew config</span><span class="desc">Full config: version, paths, macOS version</span></div>
+        <div class="row"><span class="cmd">brew doctor</span><span class="desc">Diagnose potential issues</span></div>
+        <div class="row"><span class="cmd">brew update</span><span class="desc">Fetch latest Homebrew &amp; package definitions</span></div>
+        <div class="row"><span class="cmd">brew cleanup</span><span class="desc">Remove old versions and cached downloads</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">All Packages</div>
+        <div class="row"><span class="cmd">brew upgrade</span><span class="desc">Upgrade all outdated packages</span></div>
+        <div class="row"><span class="cmd">brew outdated</span><span class="desc">Show packages with updates available</span></div>
+        <div class="row"><span class="cmd">brew autoremove</span><span class="desc">Remove all unused dependencies</span></div>
+        <div class="row"><span class="cmd">brew list</span><span class="desc">List all installed packages</span></div>
+        <div class="row"><span class="cmd">brew list --cask</span><span class="desc">List all installed casks</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Individual Packages</div>
+        <div class="row"><span class="cmd">brew install &lt;pkg&gt;</span><span class="desc">Install a package</span></div>
+        <div class="row"><span class="cmd">brew uninstall &lt;pkg&gt;</span><span class="desc">Remove a package</span></div>
+        <div class="row"><span class="cmd">brew reinstall &lt;pkg&gt;</span><span class="desc">Reinstall a package</span></div>
+        <div class="row"><span class="cmd">brew upgrade &lt;pkg&gt;</span><span class="desc">Upgrade a specific package</span></div>
+        <div class="row"><span class="cmd">brew info &lt;pkg&gt;</span><span class="desc">Show details about a package</span></div>
+        <div class="row"><span class="cmd">brew install --cask &lt;app&gt;</span><span class="desc">Install a GUI app</span></div>
+        <div class="row"><span class="cmd">brew services start/stop/restart</span><span class="desc">Manage a package's service</span></div>
+      </div>
+    </div>
+    <div class="links">
+      <a href="https://docs.brew.sh/Manpage" target="_blank" rel="noopener">Official docs &#8599;</a>
+      <a href="https://devhints.io/homebrew" target="_blank" rel="noopener">devhints.io/homebrew &#8599;</a>
+      <a href="https://github.com/mobiledge/learn/blob/master/homebrew.md" target="_blank" rel="noopener">mobiledge/learn &#8599;</a>
+      <a href="https://tldr.inbrowser.app/pages/common/brew" target="_blank" rel="noopener">tldr brew &#8599;</a>
+    </div>
+  </div>
+
+  <!-- GIT -->
+  <div class="page" id="git">
+    <h1>Git Cheatsheet</h1>
+    <div class="grid">
+      <div class="section">
+        <div class="section-title">Start &amp; Commit</div>
+        <div class="row"><span class="cmd">git init</span><span class="desc">Create a new repository</span></div>
+        <div class="row"><span class="cmd">git clone &lt;url&gt;</span><span class="desc">Clone an existing repository</span></div>
+        <div class="row"><span class="cmd">git status</span><span class="desc">Show working tree status</span></div>
+        <div class="row"><span class="cmd">git add &lt;file&gt;</span><span class="desc">Stage changes</span></div>
+        <div class="row"><span class="cmd">git commit -m "msg"</span><span class="desc">Commit staged changes</span></div>
+        <div class="row"><span class="cmd">git log --oneline</span><span class="desc">Compact commit history</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Branch &amp; Sync</div>
+        <div class="row"><span class="cmd">git branch</span><span class="desc">List branches</span></div>
+        <div class="row"><span class="cmd">git switch -c &lt;name&gt;</span><span class="desc">Create &amp; switch to branch</span></div>
+        <div class="row"><span class="cmd">git merge &lt;branch&gt;</span><span class="desc">Merge a branch into current</span></div>
+        <div class="row"><span class="cmd">git pull</span><span class="desc">Fetch &amp; merge from remote</span></div>
+        <div class="row"><span class="cmd">git push</span><span class="desc">Push commits to remote</span></div>
+        <div class="row"><span class="cmd">git restore &lt;file&gt;</span><span class="desc">Discard uncommitted changes</span></div>
+      </div>
+    </div>
+    <div class="links">
+      <a href="https://git-scm.com/docs" target="_blank" rel="noopener">Official docs &#8599;</a>
+      <a href="https://devhints.io/git" target="_blank" rel="noopener">devhints.io/git &#8599;</a>
+      <a href="https://tldr.inbrowser.app/pages/common/git" target="_blank" rel="noopener">tldr git &#8599;</a>
+    </div>
+  </div>
+
+  <!-- VIM -->
+  <div class="page" id="vim">
+    <h1>Vim Cheatsheet</h1>
+    <div class="grid">
+      <div class="section">
+        <div class="section-title">Modes &amp; Movement</div>
+        <div class="row"><span class="cmd">i</span><span class="desc">Insert before cursor</span></div>
+        <div class="row"><span class="cmd">Esc</span><span class="desc">Return to normal mode</span></div>
+        <div class="row"><span class="cmd">h j k l</span><span class="desc">Left, down, up, right</span></div>
+        <div class="row"><span class="cmd">w / b</span><span class="desc">Next / previous word</span></div>
+        <div class="row"><span class="cmd">gg / G</span><span class="desc">Top / bottom of file</span></div>
+        <div class="row"><span class="cmd">/text</span><span class="desc">Search for text</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Edit &amp; Save</div>
+        <div class="row"><span class="cmd">dd</span><span class="desc">Delete (cut) line</span></div>
+        <div class="row"><span class="cmd">yy</span><span class="desc">Yank (copy) line</span></div>
+        <div class="row"><span class="cmd">p</span><span class="desc">Paste after cursor</span></div>
+        <div class="row"><span class="cmd">u</span><span class="desc">Undo</span></div>
+        <div class="row"><span class="cmd">:w</span><span class="desc">Save file</span></div>
+        <div class="row"><span class="cmd">:wq</span><span class="desc">Save and quit</span></div>
+        <div class="row"><span class="cmd">:q!</span><span class="desc">Quit without saving</span></div>
+      </div>
+    </div>
+    <div class="links">
+      <a href="https://vimhelp.org/" target="_blank" rel="noopener">Official docs &#8599;</a>
+      <a href="https://devhints.io/vim" target="_blank" rel="noopener">devhints.io/vim &#8599;</a>
+      <a href="https://tldr.inbrowser.app/pages/common/vim" target="_blank" rel="noopener">tldr vim &#8599;</a>
+    </div>
+  </div>
+
+  <!-- SSH -->
+  <div class="page" id="ssh">
+    <h1>SSH Cheatsheet</h1>
+    <div class="grid">
+      <div class="section">
+        <div class="section-title">Connect &amp; Keys</div>
+        <div class="row"><span class="cmd">ssh user@host</span><span class="desc">Connect to a host</span></div>
+        <div class="row"><span class="cmd">ssh -p &lt;port&gt; user@host</span><span class="desc">Connect on a specific port</span></div>
+        <div class="row"><span class="cmd">ssh -i &lt;key&gt; user@host</span><span class="desc">Connect with an identity file</span></div>
+        <div class="row"><span class="cmd">ssh-keygen -t ed25519</span><span class="desc">Generate a new key pair</span></div>
+        <div class="row"><span class="cmd">ssh-copy-id user@host</span><span class="desc">Install your public key on a host</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Transfer &amp; Config</div>
+        <div class="row"><span class="cmd">scp &lt;file&gt; user@host:&lt;path&gt;</span><span class="desc">Copy a file to a host</span></div>
+        <div class="row"><span class="cmd">scp user@host:&lt;path&gt; &lt;file&gt;</span><span class="desc">Copy a file from a host</span></div>
+        <div class="row"><span class="cmd">~/.ssh/config</span><span class="desc">Per-host settings file</span></div>
+        <div class="row"><span class="cmd">ssh -v user@host</span><span class="desc">Verbose output for debugging</span></div>
+      </div>
+    </div>
+    <div class="links">
+      <a href="https://man.openbsd.org/ssh" target="_blank" rel="noopener">Official docs &#8599;</a>
+      <a href="https://tldr.inbrowser.app/pages/common/ssh" target="_blank" rel="noopener">tldr ssh &#8599;</a>
+    </div>
+  </div>
+
+  <script>
+    function show(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('tab-' + id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

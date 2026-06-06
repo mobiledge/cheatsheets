@@ -116,6 +116,7 @@
     <button class="tab" id="tab-git" onclick="show('git')">Git</button>
     <button class="tab" id="tab-vim" onclick="show('vim')">Vim</button>
     <button class="tab" id="tab-ssh" onclick="show('ssh')">SSH</button>
+    <button class="tab" id="tab-zsh" onclick="show('zsh')">Zsh</button>
     <a class="github-link" href="https://github.com/mobiledge/cheatsheets" target="_blank" rel="noopener">GitHub &#8599;</a>
   </nav>
 
@@ -242,6 +243,50 @@
     <div class="links">
       <a href="https://man.openbsd.org/ssh" target="_blank" rel="noopener">Official docs &#8599;</a>
       <a href="https://tldr.inbrowser.app/pages/common/ssh" target="_blank" rel="noopener">tldr ssh &#8599;</a>
+    </div>
+  </div>
+
+  <!-- ZSH -->
+  <div class="page" id="zsh">
+    <h1>Zsh Cheatsheet</h1>
+    <div class="grid">
+      <div class="section">
+        <div class="section-title">Navigation</div>
+        <div class="row"><span class="cmd">cd -</span><span class="desc">Go to previous directory</span></div>
+        <div class="row"><span class="cmd">cd ~2</span><span class="desc">Jump to 2nd entry in dir stack</span></div>
+        <div class="row"><span class="cmd">dirs -v</span><span class="desc">Show directory stack with indices</span></div>
+        <div class="row"><span class="cmd">pushd / popd</span><span class="desc">Push / pop directory stack</span></div>
+        <div class="row"><span class="cmd">z &lt;name&gt;</span><span class="desc">Jump to frecent directory (zoxide)</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">History</div>
+        <div class="row"><span class="cmd">Ctrl+R</span><span class="desc">Fuzzy search history</span></div>
+        <div class="row"><span class="cmd">!!</span><span class="desc">Repeat last command</span></div>
+        <div class="row"><span class="cmd">!$</span><span class="desc">Last argument of previous command</span></div>
+        <div class="row"><span class="cmd">!*</span><span class="desc">All arguments of previous command</span></div>
+        <div class="row"><span class="cmd">history 1</span><span class="desc">Show full history from the start</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Editing &amp; Shortcuts</div>
+        <div class="row"><span class="cmd">Ctrl+A / Ctrl+E</span><span class="desc">Move to start / end of line</span></div>
+        <div class="row"><span class="cmd">Ctrl+W</span><span class="desc">Delete word before cursor</span></div>
+        <div class="row"><span class="cmd">Ctrl+U</span><span class="desc">Delete to start of line</span></div>
+        <div class="row"><span class="cmd">Ctrl+L</span><span class="desc">Clear screen</span></div>
+        <div class="row"><span class="cmd">Alt+.</span><span class="desc">Insert last argument of prev command</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Globbing &amp; Expansion</div>
+        <div class="row"><span class="cmd">**/*.js</span><span class="desc">Recursive glob (all .js files)</span></div>
+        <div class="row"><span class="cmd">ls *(.) </span><span class="desc">List only regular files</span></div>
+        <div class="row"><span class="cmd">ls *(/)</span><span class="desc">List only directories</span></div>
+        <div class="row"><span class="cmd">{a,b,c}.txt</span><span class="desc">Brace expansion</span></div>
+        <div class="row"><span class="cmd">echo $((2 ** 10))</span><span class="desc">Arithmetic expansion</span></div>
+      </div>
+    </div>
+    <div class="links">
+      <a href="https://zsh.sourceforge.io/Doc/" target="_blank" rel="noopener">Official docs &#8599;</a>
+      <a href="https://devhints.io/zsh" target="_blank" rel="noopener">devhints.io/zsh &#8599;</a>
+      <a href="https://tldr.inbrowser.app/pages/common/zsh" target="_blank" rel="noopener">tldr zsh &#8599;</a>
     </div>
   </div>
 

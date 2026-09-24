@@ -117,7 +117,9 @@
     <button class="tab" id="tab-vim" onclick="show('vim')">Vim</button>
     <button class="tab" id="tab-ssh" onclick="show('ssh')">SSH</button>
     <button class="tab" id="tab-zsh" onclick="show('zsh')">Zsh</button>
-    <button class="tab" id="tab-editors" onclick="show('editors')">Editors</button>
+    <button class="tab" id="tab-vscode" onclick="show('vscode')">VS Code</button>
+    <button class="tab" id="tab-xcode" onclick="show('xcode')">Xcode</button>
+    <button class="tab" id="tab-iterm2" onclick="show('iterm2')">iTerm2</button>
     <a class="github-link" href="https://github.com/mobiledge/cheatsheets" target="_blank" rel="noopener">GitHub &#8599;</a>
   </nav>
 
@@ -291,60 +293,129 @@
     </div>
   </div>
 
-  <!-- EDITORS -->
-  <div class="page" id="editors">
-    <h1>Editor Shortcuts</h1>
+  <!-- VS CODE -->
+  <div class="page" id="vscode">
+    <h1>VS Code Cheatsheet</h1>
     <div class="grid">
       <div class="section">
-        <div class="section-title">VS Code</div>
+        <div class="section-title">Navigation</div>
         <div class="row"><span class="cmd">Cmd+P</span><span class="desc">Quick open file</span></div>
         <div class="row"><span class="cmd">Cmd+Shift+P</span><span class="desc">Command palette</span></div>
-        <div class="row"><span class="cmd">Cmd+Shift+F</span><span class="desc">Search across files</span></div>
-        <div class="row"><span class="cmd">Cmd+D</span><span class="desc">Select next occurrence</span></div>
-        <div class="row"><span class="cmd">Opt+Up / Opt+Down</span><span class="desc">Move line up / down</span></div>
-        <div class="row"><span class="cmd">Cmd+Shift+K</span><span class="desc">Delete line</span></div>
-        <div class="row"><span class="cmd">Cmd+/</span><span class="desc">Toggle line comment</span></div>
+        <div class="row"><span class="cmd">Cmd+Shift+O</span><span class="desc">Go to symbol in file</span></div>
+        <div class="row"><span class="cmd">Ctrl+G</span><span class="desc">Go to line</span></div>
         <div class="row"><span class="cmd">F12</span><span class="desc">Go to definition</span></div>
-        <div class="row"><span class="cmd">F2</span><span class="desc">Rename symbol</span></div>
-        <div class="row"><span class="cmd">Cmd+B</span><span class="desc">Toggle sidebar</span></div>
-        <div class="row"><span class="cmd">Ctrl+`</span><span class="desc">Toggle integrated terminal</span></div>
-        <div class="row"><span class="cmd">Cmd+\</span><span class="desc">Split editor</span></div>
+        <div class="row"><span class="cmd">Ctrl+- / Ctrl+Shift+-</span><span class="desc">Navigate back / forward</span></div>
       </div>
       <div class="section">
-        <div class="section-title">Xcode</div>
+        <div class="section-title">Editing</div>
+        <div class="row"><span class="cmd">Cmd+D</span><span class="desc">Select next occurrence</span></div>
+        <div class="row"><span class="cmd">Opt+Up / Opt+Down</span><span class="desc">Move line up / down</span></div>
+        <div class="row"><span class="cmd">Shift+Opt+Down</span><span class="desc">Copy line down</span></div>
+        <div class="row"><span class="cmd">Cmd+Shift+K</span><span class="desc">Delete line</span></div>
+        <div class="row"><span class="cmd">Cmd+/</span><span class="desc">Toggle line comment</span></div>
+        <div class="row"><span class="cmd">Shift+Opt+F</span><span class="desc">Format document</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Search &amp; Refactor</div>
+        <div class="row"><span class="cmd">Cmd+F</span><span class="desc">Find in file</span></div>
+        <div class="row"><span class="cmd">Cmd+Opt+F</span><span class="desc">Replace in file</span></div>
+        <div class="row"><span class="cmd">Cmd+Shift+F</span><span class="desc">Search across files</span></div>
+        <div class="row"><span class="cmd">F2</span><span class="desc">Rename symbol</span></div>
+        <div class="row"><span class="cmd">Cmd+.</span><span class="desc">Quick fix</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Layout</div>
+        <div class="row"><span class="cmd">Cmd+B</span><span class="desc">Toggle sidebar</span></div>
+        <div class="row"><span class="cmd">Cmd+J</span><span class="desc">Toggle bottom panel</span></div>
+        <div class="row"><span class="cmd">Ctrl+`</span><span class="desc">Toggle integrated terminal</span></div>
+        <div class="row"><span class="cmd">Cmd+\</span><span class="desc">Split editor</span></div>
+        <div class="row"><span class="cmd">Cmd+K Z</span><span class="desc">Zen mode</span></div>
+      </div>
+    </div>
+    <div class="links">
+      <a href="https://code.visualstudio.com/docs/getstarted/keybindings" target="_blank" rel="noopener">Official docs &#8599;</a>
+      <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf" target="_blank" rel="noopener">macOS shortcuts PDF &#8599;</a>
+    </div>
+  </div>
+
+  <!-- XCODE -->
+  <div class="page" id="xcode">
+    <h1>Xcode Cheatsheet</h1>
+    <div class="grid">
+      <div class="section">
+        <div class="section-title">Build &amp; Run</div>
         <div class="row"><span class="cmd">Cmd+B</span><span class="desc">Build</span></div>
         <div class="row"><span class="cmd">Cmd+R</span><span class="desc">Run</span></div>
         <div class="row"><span class="cmd">Cmd+.</span><span class="desc">Stop</span></div>
         <div class="row"><span class="cmd">Cmd+U</span><span class="desc">Run tests</span></div>
         <div class="row"><span class="cmd">Cmd+Shift+K</span><span class="desc">Clean build folder</span></div>
-        <div class="row"><span class="cmd">Cmd+Shift+O</span><span class="desc">Open quickly</span></div>
-        <div class="row"><span class="cmd">Ctrl+Cmd+J</span><span class="desc">Jump to definition</span></div>
-        <div class="row"><span class="cmd">Cmd+/</span><span class="desc">Toggle line comment</span></div>
-        <div class="row"><span class="cmd">Ctrl+I</span><span class="desc">Re-indent selection</span></div>
-        <div class="row"><span class="cmd">Cmd+0</span><span class="desc">Toggle navigator</span></div>
-        <div class="row"><span class="cmd">Cmd+Shift+Y</span><span class="desc">Toggle debug area</span></div>
-        <div class="row"><span class="cmd">Opt+Cmd+Return</span><span class="desc">Toggle SwiftUI preview canvas</span></div>
       </div>
       <div class="section">
-        <div class="section-title">iTerm2</div>
+        <div class="section-title">Navigation</div>
+        <div class="row"><span class="cmd">Cmd+Shift+O</span><span class="desc">Open quickly</span></div>
+        <div class="row"><span class="cmd">Ctrl+Cmd+J</span><span class="desc">Jump to definition</span></div>
+        <div class="row"><span class="cmd">Ctrl+Cmd+Left / Right</span><span class="desc">Go back / forward</span></div>
+        <div class="row"><span class="cmd">Cmd+Shift+J</span><span class="desc">Reveal file in navigator</span></div>
+        <div class="row"><span class="cmd">Ctrl+6</span><span class="desc">List symbols in file</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Editing</div>
+        <div class="row"><span class="cmd">Cmd+/</span><span class="desc">Toggle line comment</span></div>
+        <div class="row"><span class="cmd">Ctrl+I</span><span class="desc">Re-indent selection</span></div>
+        <div class="row"><span class="cmd">Opt+Cmd+[ / ]</span><span class="desc">Move line up / down</span></div>
+        <div class="row"><span class="cmd">Ctrl+Cmd+E</span><span class="desc">Edit all in scope</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Layout</div>
+        <div class="row"><span class="cmd">Cmd+0</span><span class="desc">Toggle navigator</span></div>
+        <div class="row"><span class="cmd">Opt+Cmd+0</span><span class="desc">Toggle inspectors</span></div>
+        <div class="row"><span class="cmd">Cmd+Shift+Y</span><span class="desc">Toggle debug area</span></div>
+        <div class="row"><span class="cmd">Opt+Cmd+Return</span><span class="desc">Toggle SwiftUI preview canvas</span></div>
+        <div class="row"><span class="cmd">Cmd+Shift+L</span><span class="desc">Show library</span></div>
+      </div>
+    </div>
+    <div class="links">
+      <a href="https://developer.apple.com/documentation/xcode" target="_blank" rel="noopener">Official docs &#8599;</a>
+    </div>
+  </div>
+
+  <!-- ITERM2 -->
+  <div class="page" id="iterm2">
+    <h1>iTerm2 Cheatsheet</h1>
+    <div class="grid">
+      <div class="section">
+        <div class="section-title">Tabs &amp; Windows</div>
         <div class="row"><span class="cmd">Cmd+T</span><span class="desc">New tab</span></div>
+        <div class="row"><span class="cmd">Cmd+N</span><span class="desc">New window</span></div>
+        <div class="row"><span class="cmd">Cmd+W</span><span class="desc">Close tab or pane</span></div>
         <div class="row"><span class="cmd">Cmd+1…9</span><span class="desc">Go to tab by number</span></div>
-        <div class="row"><span class="cmd">Cmd+D</span><span class="desc">Split pane vertically</span></div>
-        <div class="row"><span class="cmd">Cmd+Shift+D</span><span class="desc">Split pane horizontally</span></div>
+        <div class="row"><span class="cmd">Cmd+Return</span><span class="desc">Toggle full screen</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Panes</div>
+        <div class="row"><span class="cmd">Cmd+D</span><span class="desc">Split vertically</span></div>
+        <div class="row"><span class="cmd">Cmd+Shift+D</span><span class="desc">Split horizontally</span></div>
         <div class="row"><span class="cmd">Cmd+[ / Cmd+]</span><span class="desc">Previous / next pane</span></div>
-        <div class="row"><span class="cmd">Cmd+Shift+Return</span><span class="desc">Maximize / restore current pane</span></div>
-        <div class="row"><span class="cmd">Cmd+K</span><span class="desc">Clear buffer</span></div>
+        <div class="row"><span class="cmd">Cmd+Opt+Arrow</span><span class="desc">Move to pane in direction</span></div>
+        <div class="row"><span class="cmd">Cmd+Shift+Return</span><span class="desc">Maximize / restore pane</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Search &amp; History</div>
         <div class="row"><span class="cmd">Cmd+F</span><span class="desc">Find in output</span></div>
         <div class="row"><span class="cmd">Cmd+;</span><span class="desc">Autocomplete from history</span></div>
         <div class="row"><span class="cmd">Cmd+Shift+H</span><span class="desc">Paste history</span></div>
         <div class="row"><span class="cmd">Cmd+Opt+B</span><span class="desc">Instant replay</span></div>
-        <div class="row"><span class="cmd">Cmd+Return</span><span class="desc">Toggle full screen</span></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Utilities</div>
+        <div class="row"><span class="cmd">Cmd+K</span><span class="desc">Clear buffer</span></div>
+        <div class="row"><span class="cmd">Cmd+/</span><span class="desc">Find cursor</span></div>
+        <div class="row"><span class="cmd">Cmd+Shift+E</span><span class="desc">Show timestamps</span></div>
+        <div class="row"><span class="cmd">Cmd+Opt+I</span><span class="desc">Broadcast input to all panes in tab</span></div>
       </div>
     </div>
     <div class="links">
-      <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf" target="_blank" rel="noopener">VS Code shortcuts &#8599;</a>
-      <a href="https://developer.apple.com/documentation/xcode" target="_blank" rel="noopener">Xcode docs &#8599;</a>
-      <a href="https://iterm2.com/documentation.html" target="_blank" rel="noopener">iTerm2 docs &#8599;</a>
+      <a href="https://iterm2.com/documentation.html" target="_blank" rel="noopener">Official docs &#8599;</a>
     </div>
   </div>
 
